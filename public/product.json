@@ -1,0 +1,50 @@
+[
+  {
+    "name": "The Circular Saw",
+    "image": "https://i.ibb.co/gPwS1p4/circular-saw.png",
+    "shortDescription": "A good circular saw is one of the most versatile tools you can own. Most people consider the circular saw to be a carpentry tool",
+    "minimumOrderQuantity": 50,
+    "availableQuantity": 1000,
+    "pricePerProduct": 50
+  },
+  {
+    "name": "The Random Orbital Sander",
+    "image": "https://i.ibb.co/vYRRPtJ/random-orbital-sander.png",
+    "shortDescription": "A random orbital sander is actually a step up from the “little brother” version – the palm sander. The random orbital sander uses hook and loop (Velcro) ",
+    "minimumOrderQuantity": 60,
+    "availableQuantity": 1500,
+    "pricePerProduct": 70
+  },
+  {
+    "name": "The Circular Saw",
+    "image": "https://i.ibb.co/89xhnr0/palm-sander.png",
+    "shortDescription": "A good palm sander is vital to any woodworker’s power tool collection. The palm sander will use ¼ of a sheet of sanding paper and is small ",
+    "minimumOrderQuantity": 30,
+    "availableQuantity": 1500,
+    "pricePerProduct": 65
+  },
+  {
+    "name": "The Sabre Saw",
+    "image": "https://i.ibb.co/smhRwKj/sabre-saw.png",
+    "shortDescription": "Every woodworker should have a saber saw. Often called a jigsaw, it will allow you to cut curves and patterns in your stock materials",
+    "minimumOrderQuantity": 40,
+    "availableQuantity": 1600,
+    "pricePerProduct": 30
+  },
+  {
+    "name": "The Circular Saw",
+    "image": "https://i.ibb.co/gPwS1p4/circular-saw.png",
+    "shortDescription": "A good circular saw is one of the most versatile tools you can own. Most people consider the circular saw to be a carpentry tool  ",
+    "minimumOrderQuantity": 50,
+    "availableQuantity": 1000,
+    "pricePerProduct": 50
+  },
+  {
+    "name": "The Compound Miter Saw",
+    "image": "https://i.ibb.co/GtfQtkj/compound-miter-saw.png",
+    "shortDescription": "You already have a tenon saw with a miter box, but if you’re going to get into the crown molding and other such projects, you’ll need a compound miter saw. ",
+    "minimumOrderQuantity": 70,
+    "availableQuantity": 1800,
+    "pricePerProduct": 30
+  }
+]
