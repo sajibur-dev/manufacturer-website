@@ -1,9 +1,12 @@
 import React from 'react';
+import Navbar from './components/Navbar';
+import Routers from './routes/Routers';
 
 const App = () => {
   return (
     <div>
-      <h1>this is app</h1>
+      <Navbar/>
+      <Routers/>
     </div>
   );
 };
