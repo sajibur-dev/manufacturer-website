@@ -4,10 +4,10 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-4 px-5 py-11 my-6 text-accent'>
+        <div className='grid grid-cols-1 lg:grid-cols-4 lg:px-5 py-11 my-6 text-accent'>
 
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-7'>
                 <div>
                     <FontAwesomeIcon  className='text-5xl mt-2 mr-3' icon={faTruck}/>
                 </div>
@@ -18,7 +18,7 @@ const Services = () => {
             </div>
 
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-7'>
                 <div>
                     <FontAwesomeIcon className='text-5xl mt-2 mr-3' icon={faClockRotateLeft}/>
                 </div>
@@ -29,7 +29,7 @@ const Services = () => {
             </div>
 
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-7'>
                 <div className='space-y-1'>
                     <FontAwesomeIcon className='text-5xl mt-2 mr-3' icon={faSackDollar}/>
                 </div>
@@ -40,7 +40,7 @@ const Services = () => {
             </div>
 
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-7'>
                 <div className='space-y-1'>
                     <FontAwesomeIcon className='text-5xl mt-2 mr-3' icon={faPercent}/>
                 </div>

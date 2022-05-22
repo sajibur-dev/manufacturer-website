@@ -9,11 +9,12 @@ const CustomerReview = () => {
         .then((data) => {
             setReviews(data)
         })
-    },[setReviews])
+    },[setReviews]);
+    const count = reviews?.length
   return (
-    <div class="carousel w-full mt-12">
+    <div class="carousel w-full mt-14">
       {
-          reviews?.map((review) => <Review review={review}/>)
+          reviews?.map((review) => <Review count={count} review={review}/>)
       }
     </div>
   );
