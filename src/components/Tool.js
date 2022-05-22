@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({product}) => {
+const Tool = ({product}) => {
     const { name,image,minimumOrderQuantity,pricePerProduct,shortDescription,availableQuantity } = product;
   return (
     <div class="card max-w-lg bg-base-100 shadow-xl">
@@ -21,4 +21,4 @@ const Product = ({product}) => {
   );
 };
 
-export default Product;
+export default Tool;

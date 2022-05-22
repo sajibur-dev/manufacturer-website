@@ -1,5 +1,6 @@
 import React from "react";
-import Products from "../components/Products";
+import BussinessSummary from "../components/BussinessSummary";
+import Tools from "../components/Tools";
 
 
 
@@ -8,7 +9,8 @@ const Home = () => {
   return (
     <div>
         {/* <Banner/> */}
-        <Products/>
+        <Tools/>
+        <BussinessSummary/>
     </div>
   );
 };

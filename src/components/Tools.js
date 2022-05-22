@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Product from './Product';
+import Tool from './Tool';
 
-const Products = () => {
+const Tools = () => {
     const [products,setProducts] =  useState([]);
     useEffect(()=>{
         fetch('product.json')
@@ -15,11 +15,11 @@ const Products = () => {
             <h1 className='text-2xl'>Hand Tool</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 md:p-10'>
                 {
-                    products.map((product)=><Product product={product}/>)
+                    products.map((product)=><Tool product={product}/>)
                 }
             </div>
         </div>
     );
 };
 
-export default Products;
+export default Tools;
