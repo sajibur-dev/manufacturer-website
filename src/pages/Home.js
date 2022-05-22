@@ -1,5 +1,6 @@
 import React from "react";
 import BussinessSummary from "../components/BussinessSummary";
+import Reviews from "../components/Reviews";
 import Tools from "../components/Tools";
 
 
@@ -11,6 +12,7 @@ const Home = () => {
         {/* <Banner/> */}
         <Tools/>
         <BussinessSummary/>
+        <Reviews/>
     </div>
   );
 };
