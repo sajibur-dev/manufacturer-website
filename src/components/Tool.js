@@ -10,6 +10,7 @@ const Tool = ({product}) => {
         <img
           src={image}
           alt="Shoes"
+          className="w-1/2"
         />
       </figure>
       <div class="card-body text-accent ">
@@ -19,9 +20,9 @@ const Tool = ({product}) => {
           <h4><FontAwesomeIcon className="text-primary" icon={faCartArrowDown}/> : {minimumOrderQuantity} (min)</h4>
           <h4><FontAwesomeIcon className="text-primary" icon={faDatabase}/> : {availableQuantity} (available)</h4>
         </div>
-        <h4 className="text-center mb-5"><FontAwesomeIcon className="text-primary" icon={faCircleDollarToSlot}/> : {pricePerProduct} (per product)</h4>
+        <h4 className=" mb-5"><FontAwesomeIcon className="text-primary" icon={faCircleDollarToSlot}/> : {pricePerProduct} (per product)</h4>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">Buy Now</button>
+          <button class="btn btn-primary">Place Order</button>
         </div>
       </div>
     </div>

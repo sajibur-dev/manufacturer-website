@@ -12,10 +12,14 @@ const CustomerReview = () => {
     },[setReviews]);
     const count = reviews?.length
   return (
-    <div class="carousel w-full mt-14">
+    <div className="mt-5">
+      <h1 className="text-center text-accent text-3xl uppercase">customer review</h1>
+      <div  class="carousel w-full mt-14">
+
       {
           reviews?.map((review) => <Review count={count} review={review}/>)
       }
+      </div>
     </div>
   );
 };

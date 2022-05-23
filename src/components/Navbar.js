@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import brand from "../assets/icons/brand.jpg";
 
 const Navbar = () => {
-  const user = 'sajibur rahman';
+  const user = '';
   return (
     <div class="navbar bg-base-100 px-7 py-5">
       <div class="navbar-start">
