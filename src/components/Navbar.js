@@ -52,6 +52,11 @@ const Navbar = () => {
             <li>
               <NavLink to="/about">about us</NavLink>
             </li>
+            {
+              user && <li>
+              <NavLink to="/dashboard">dashboard</NavLink>
+            </li>
+            }
             <li>
               <NavLink to="/blogs">blogs</NavLink>
             </li>
@@ -69,6 +74,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/">home</NavLink>
           </li>
+          {
+              user && <li>
+              <NavLink to="/dashboard">dashboard</NavLink>
+            </li>
+            }
           <li>
             <NavLink to="/about">about us</NavLink>
           </li>

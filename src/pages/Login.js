@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
 
 const Login = () => {
     const [email,setEmail] = useState('')
   const navigate = useNavigate();
+  const locaiton = useLocation()
+  const from = locaiton?.state?.from?.pathname || '/'
   const {
     register,
     reset,
@@ -40,7 +42,7 @@ const Login = () => {
 
 
   if(user){
-    navigate('/');
+    navigate(from,{replace:true});
   }
   return (
     <div className="md:flex md:justify-center md:items-center md:px-0  px-5 my-28">
