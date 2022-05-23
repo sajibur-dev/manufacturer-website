@@ -6,12 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import brand from "../assets/icons/brand.jpg";
 import auth from "../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const navigate =  useNavigate()
   console.log(user);
   const logout = () => {
     signOut(auth)
@@ -88,11 +91,12 @@ const Navbar = () => {
             <button className="btn btn-ghost text-2xl ml-2" onClick={logout}><FontAwesomeIcon icon={faArrowRightFromBracket} /></button>
               </>
           ) : (
-            <NavLink to="/login">
-            <FontAwesomeIcon className="text-2xl" icon={faArrowRightToBracket} />
-        </NavLink>
+            <button onClick={() => navigate('/login')}>
+            <FontAwesomeIcon className="btn btn-ghost" icon={faArrowRightToBracket} />
+        </button>
           )}
       </div>
+      <ToastContainer/>
     </div>
   );
 };

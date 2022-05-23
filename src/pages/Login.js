@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../firebase.init";
 
 const Login = () => {
+    const [email,setEmail] = useState('')
   const navigate = useNavigate();
   const {
     register,
@@ -11,14 +15,37 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+    auth
+  );
+
   const onSubmit = (data) => {
     console.log(data);
+    setEmail(data.email);
+    signInWithEmailAndPassword(data.email,data.password);
+    reset();
+    
   };
+  const  passwordReset = async () =>{
+    await sendPasswordResetEmail(email);
+    toast.success(`sent password reset link to ${email} `)
+  }
 
+
+  if(user){
+    navigate('/');
+  }
   return (
-    <div className="flex justify-center items-center my-28">
+    <div className="md:flex md:justify-center md:items-center md:px-0  px-5 my-28">
       <div className="space-y-4">
-        <h1 className="text-4xl uppercase">returning customer</h1>
+        <h1 className="md:text-4xl text-2xl uppercase">returning customer</h1>
         <p>I am returning coustomer</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div class="form-control w-full max-w-xs">
@@ -87,9 +114,13 @@ const Login = () => {
             className="btn btn-accent text-white"
           />
         </form>
+        <button onClick={passwordReset} class="btn pl-0 btn-link">reset password</button>
         <p className="text-accent">
-          New to toolkits ? <Link to="/register" className="hover:text-blue-800">register</Link>
+          New to toolkits ? <Link to="/register" className="text-blue-800">register</Link>
         </p>
+        {
+            error && <p>{error?.message}</p>
+        }
       </div>
     </div>
   );
