@@ -3,12 +3,19 @@ import {
   faArrowRightToBracket
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
 import brand from "../assets/icons/brand.jpg";
+import auth from "../firebase.init";
 
 const Navbar = () => {
-  const user = '';
+  const [user] = useAuthState(auth);
+  console.log(user);
+  const logout = () => {
+    signOut(auth)
+  }
   return (
     <div class="navbar bg-base-100 px-7 py-5">
       <div class="navbar-start">
@@ -77,8 +84,8 @@ const Navbar = () => {
         
           {user ? (
               <>
-              <p className="md:text-base text-xs">{user}</p>
-            <button className="btn btn-ghost text-2xl ml-2"><FontAwesomeIcon icon={faArrowRightFromBracket} /></button>
+              <p className="md:text-base text-xs">{user.displayName}</p>
+            <button className="btn btn-ghost text-2xl ml-2" onClick={logout}><FontAwesomeIcon icon={faArrowRightFromBracket} /></button>
               </>
           ) : (
             <NavLink to="/login">

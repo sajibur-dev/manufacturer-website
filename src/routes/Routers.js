@@ -5,6 +5,7 @@ import Blogs from '../pages/Blogs';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 
 const Routers = () => {
@@ -15,6 +16,7 @@ const Routers = () => {
             <Route path='/blogs' element={<Blogs/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
         </Routes>
     );
 };
