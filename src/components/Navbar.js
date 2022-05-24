@@ -17,7 +17,8 @@ const Navbar = () => {
   const navigate =  useNavigate()
   console.log(user);
   const logout = () => {
-    signOut(auth)
+    signOut(auth);
+    localStorage.removeItem('accessToken')
   }
   return (
     <div class="navbar bg-base-100 px-7 py-5">

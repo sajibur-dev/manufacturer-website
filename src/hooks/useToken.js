@@ -1,24 +1,32 @@
 import { useEffect, useState } from 'react';
 
-const useToken = (email) => {
+const useToken = (user) => {
     const [token,setToken] = useState();
-   console.log(email);
+
+    // console.log(user?.uid);
+    const uid = user?.uid;
+    const email = user?.email;
+
     useEffect(()=>{
         const user = {
-            email:email,
-            role:'customer'
+            uid:uid,
+            email:email
         }
-        if(email){
-            fetch(`https://enigmatic-thicket-44471.herokuapp.com/users/${email}`,{
+        if(uid || email){
+            fetch(`http://localhost:5000/users/${uid}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
             },
             body:JSON.stringify(user)
         }).then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+            const accessToken = data.token;
+            localStorage.setItem('accessToken',accessToken);
+            setToken(accessToken);
+        });
         }
-    },[email]);
+    },[email,uid]);
     return [token];
 };
 

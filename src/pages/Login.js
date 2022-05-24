@@ -30,7 +30,7 @@ const Login = () => {
     auth
   );
 
-  const token = useToken(user?.email);
+  const [token] = useToken(user);
   console.log('token',token);
 
   const onSubmit = (data) => {
@@ -46,7 +46,7 @@ const Login = () => {
   }
 
 
-  if(eUser){
+  if(token){
     navigate(from,{replace:true});
   }
   return (
