@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
-import Review from "./Review";
+import Review from "../components/Review";
+
 
 const CustomerReview = () => {
-    const [ reviews,setReviews ] =  useState([]);
-    useEffect(()=>{
-        fetch('reviews.json')
-        .then((res) => res.json())
-        .then((data) => {
-            setReviews(data)
-        })
-    },[setReviews]);
-    const count = reviews?.length
-  return (
-    <div className="mt-5">
-      <h1 className="text-center text-accent text-3xl uppercase">customer review</h1>
-      <div  class="carousel w-full mt-14">
-
-      {
-          reviews?.map((review) => <Review count={count} review={review}/>)
-      }
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [setReviews]);
+  const count = reviews?.length;
+  console.log(reviews);
+  return ( 
+    <div className="mt-5 text-center">
+      <h1 className="text-center text-accent text-3xl uppercase">
+        customer review
+      </h1>
+      <div class="h-96 carousel carousel-vertical rounded-box p-5 mt-5">
+        {
+          reviews.map((review) => <Review review={review}/>)
+        }
+        
       </div>
     </div>
   );

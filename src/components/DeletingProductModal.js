@@ -4,7 +4,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const DeletingProductModal = ({deletingProduct,setDeletingProduct,refetch}) => {
-    const { _id,product, productQuantity, price, paid } = deletingProduct;
+    const { _id,product} = deletingProduct;
     const removeProduct = (_id) => {
         fetch(`http://localhost:5000/orders/${_id}`,{
             method:"DELETE"

@@ -1,30 +1,29 @@
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const Review = ({ review, count }) => {
-  const { id, name, role, description, images } = review;
-  console.log("id", id);
-  console.log("count", count);
+const Review = ({ review }) => {
+  const { name, role, description, images,rating } = review;
+  
+
   return (
-    <div id={`slide${id}`} class="carousel-item relative w-full text-center">
-      <div className="space-y-5">
-        <p>{description}</p>
+    <div class="carousel-item flex md:flex-row flex-col  h-full">
+      <div>
         <div class="avatar">
           <div class="w-24 rounded-full">
-            <img src={images} alt="iamge1" />
+            <img src={images} alt="images" />
           </div>
         </div>
-        <div>
-          <h4 className="text-lg uppercase">{name}</h4>
-          <p className="text-sm">{role}</p>
-        </div>
+        <p>{name}</p>
+        <p className="text-sm">{role}</p>
+        <h1>
+            {[...Array(rating).keys()].map((r) => (
+              <FontAwesomeIcon className="text-primary text-xs mr-1" icon={faStar} />
+            ))}
+          </h1>
       </div>
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href={`#slide${id === 1 ? count : id - 1}`} class="btn btn-circle">
-          ❮
-        </a>
-          <a href={`#slide${id === count ? 1 : id + 1}`} class="btn btn-circle">
-            ❯
-          </a>
+      <div className="h-28 md:overflow-visible overflow-scroll">
+        <p>{description}</p>
       </div>
     </div>
   );
