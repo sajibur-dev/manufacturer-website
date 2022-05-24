@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import Tool from './Tool';
+import React from "react";
+import { useQuery } from "react-query";
+import Loading from "./Loading";
+import Tool from "./Tool";
 
 const Tools = () => {
-    const [products,setProducts] =  useState([]);
-    useEffect(()=>{
-        fetch('product.json')
-        .then((res)=>res.json())
-        .then((products)=>{
-            setProducts(products)
-        })
-    },[])
-    return (
-        <div className='p-10 my-10'>
-            <h1 className='text-2xl'>Our Products</h1>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 md:p-10'>
-                {
-                    products.map((product)=><Tool product={product}/>)
-                }
-            </div>
+  const { data, isLoading } = useQuery("products", () =>
+    fetch("https://enigmatic-thicket-44471.herokuapp.com/products").then(
+      (res) => res.json()
+    )
+  );
+  return (
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="p-10 my-10">
+          <h1 className="text-2xl">Our Products</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 md:p-10">
+            {data.map((product) => (
+              <Tool product={product} />
+            ))}
+          </div>
         </div>
-    );
+      )}
+    </>
+  );
 };
 
 export default Tools;

@@ -1,16 +1,18 @@
-import React from 'react';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import Routers from './routes/Routers';
-
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Routers from "./routes/Routers";
 
 const App = () => {
   return (
-    <div>
-      <Navbar/>
-      <Routers/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routers />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
