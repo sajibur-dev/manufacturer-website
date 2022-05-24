@@ -46,6 +46,7 @@ const handlePlaceOrder = (e) => {
         address,
         product,
         price,
+        paid:false,
         productSize,
         productColor,
         productMaterial,
@@ -54,7 +55,7 @@ const handlePlaceOrder = (e) => {
     const productQuantityNumber = +productQuantity;
     if(productQuantityNumber >= minimumOrderQuantity && productQuantityNumber <= availableQuantity){
         
-        fetch('https://enigmatic-thicket-44471.herokuapp.com/orders',{
+        fetch('http://localhost:5000/orders',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
