@@ -17,7 +17,7 @@ const Tools = () => {
         <div className="p-10 my-10">
           <h1 className="text-2xl">Our Products</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 md:p-10">
-            {data.map((product) => (
+            {data?.map((product) => (
               <Tool product={product} />
             ))}
           </div>

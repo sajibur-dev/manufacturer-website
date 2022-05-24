@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
+import useToken from "../hooks/useToken";
 
 const Login = () => {
     const [email,setEmail] = useState('')
+    const [user] = useAuthState(auth); 
   const navigate = useNavigate();
   const locaiton = useLocation()
   const from = locaiton?.state?.from?.pathname || '/'
@@ -19,7 +21,7 @@ const Login = () => {
 
   const [
     signInWithEmailAndPassword,
-    user,
+    eUser,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
@@ -27,6 +29,9 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
     auth
   );
+
+  const token = useToken(user?.email);
+  console.log('token',token);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -41,7 +46,7 @@ const Login = () => {
   }
 
 
-  if(user){
+  if(eUser){
     navigate(from,{replace:true});
   }
   return (
