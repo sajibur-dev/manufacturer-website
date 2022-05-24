@@ -1,4 +1,5 @@
 import React from "react";
+import 'react-day-picker/dist/style.css';
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";

@@ -2,7 +2,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const ProductDetail = ({ product }) => {
+
+const ProductDetail = ({ product,setProduct ,date ,setDate}) => {
   const {
     name,
     image,
@@ -46,6 +47,7 @@ const ProductDetail = ({ product }) => {
             Minimum order{" "}
             <span className="font-normal">{minimumOrderQuantity} pic</span>
           </p>
+          <label onClick={()=>setProduct(product)} for="product-modal" class="btn modal-button">place order</label>
         </div>
       </div>
     </div>
