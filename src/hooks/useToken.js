@@ -6,11 +6,13 @@ const useToken = (user) => {
     // console.log(user?.uid);
     const uid = user?.uid;
     const email = user?.email;
+    const name = user?.displayName;
 
     useEffect(()=>{
         const user = {
-            uid:uid,
-            email:email
+            uid,
+            email,
+            name
         }
         if(uid || email){
             fetch(`http://localhost:5000/users/${uid}`,{
