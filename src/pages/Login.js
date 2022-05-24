@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,7 +8,6 @@ import useToken from "../hooks/useToken";
 
 const Login = () => {
     const [email,setEmail] = useState('')
-    const [user] = useAuthState(auth); 
   const navigate = useNavigate();
   const locaiton = useLocation()
   const from = locaiton?.state?.from?.pathname || '/'
@@ -21,7 +20,7 @@ const Login = () => {
 
   const [
     signInWithEmailAndPassword,
-    eUser,
+    user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);

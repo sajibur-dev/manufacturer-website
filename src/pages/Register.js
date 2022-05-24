@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
+import useToken from "../hooks/useToken";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -21,14 +22,18 @@ const Register = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, profileError] = useUpdateProfile(auth);
 
+  const [token] = useToken(user);
+
   const onSubmit = async (data) => {
     console.log(data);
     await createUserWithEmailAndPassword(data.email,data.password);
     await updateProfile({displayName:data.name});
     reset();
-    navigate('/')
-
   };
+
+  if(token){
+    navigate('/')
+  }
 
   return (
     <div className="flex justify-center items-center my-28">
