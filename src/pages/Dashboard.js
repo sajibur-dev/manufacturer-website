@@ -18,7 +18,7 @@ const Dashboard = () => {
           for="dashboard-drawer"
           class="btn btn-primary drawer-button lg:hidden"
         >
-          Open drawer
+          open link
         </label>
       </div>
       <div class="drawer-side">

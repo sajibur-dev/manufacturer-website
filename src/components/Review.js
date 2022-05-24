@@ -11,13 +11,13 @@ const Review = ({ review }) => {
       <div>
         <div class="avatar">
           <div class="w-24 rounded-full">
-            <img src={images} alt="images" />
+            <img src={`${images || 'https://api.lorem.space/image/face?hash=92313'}`} alt="images" />
           </div>
         </div>
         <p>{name}</p>
         <p className="text-sm">{role}</p>
         <h1>
-            {[...Array(rating).keys()].map((r) => (
+            {[...Array(+rating).keys()].map((r) => (
               <FontAwesomeIcon className="text-primary text-xs mr-1" icon={faStar} />
             ))}
           </h1>

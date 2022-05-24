@@ -32,7 +32,7 @@ const Routers = () => {
           <Route
             path="myOrders"
             element={ <RequireUser> <MyOrders /></RequireUser>}/>
-          <Route path="addReviews" element={<RequireAdmin><AddReviews /></RequireAdmin>} />
+          <Route path="addReviews" element={<RequireUser><AddReviews /></RequireUser>} />
           
           <Route path="allOrders" element={<RequireAdmin> <AllOrders /></RequireAdmin>} />
           <Route path="addProduct" element={<RequireAdmin> <AddProduct /></RequireAdmin>} />

@@ -11,8 +11,6 @@ const CustomerReview = () => {
         setReviews(data);
       });
   }, [setReviews]);
-  const count = reviews?.length;
-  console.log(reviews);
   return ( 
     <div className="mt-5 text-center">
       <h1 className="text-center text-accent text-3xl uppercase">
