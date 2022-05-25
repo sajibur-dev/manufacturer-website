@@ -47,6 +47,7 @@ const handlePlaceOrder = (e) => {
         product,
         price,
         paid:false,
+        status:"unpaid",
         productSize,
         productColor,
         productMaterial,
@@ -114,7 +115,7 @@ const handlePlaceOrder = (e) => {
                 size
               </option>
               {
-                  size.map((s) => <option value={s}>{s}</option>)
+                  size?.map((s) => <option value={s}>{s}</option>)
               }
             </select>
 
@@ -123,7 +124,7 @@ const handlePlaceOrder = (e) => {
                 color
               </option>
               {
-                  color.map((c) => <option value={c}>{c}</option>)
+                  color?.map((c) => <option value={c}>{c}</option>)
               }
             </select>
 
@@ -132,7 +133,7 @@ const handlePlaceOrder = (e) => {
                 material
               </option>
               {
-                  material.map((m) => <option value={m}>{m}</option>)
+                  material?.map((m) => <option value={m}>{m}</option>)
               }
             </select>
             

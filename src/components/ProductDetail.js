@@ -26,7 +26,7 @@ const ProductDetail = ({ product,setProduct ,date ,setDate}) => {
         <div className="space-y-5">
           <h1 className="text-accent font-bold">{name}</h1>
           <h1>
-            {[...Array(rating).keys()].map((r) => (
+            {[...Array(rating).keys()]?.map((r) => (
               <FontAwesomeIcon className="text-primary mr-1" icon={faStar} />
             ))}
           </h1>

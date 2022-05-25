@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Tool = ({product}) => {
   const navigate = useNavigate()
     const {_id, name,image,minimumOrderQuantity,pricePerProduct,shortDescription,availableQuantity } = product;
-    const showingDesctiption = shortDescription.slice(0,100)
+    const showingDesctiption = shortDescription?.slice(0,100)
   return (
     <div class="card max-w-lg bg-base-100 shadow-xl">
       <figure>

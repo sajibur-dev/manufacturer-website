@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token,setToken] = useState();
-console.log(user);
-    // console.log(user?.uid);
-    const uid = user?.user?.uid;
-    const email = user?.user?.email;
-    const name = user?.user?.displayName;
+    const uid = user.user?.uid;
+    const email = user.user?.email;
+    const name = user.user?.displayName;
 
     useEffect(()=>{
         const user = {
@@ -28,7 +26,7 @@ console.log(user);
             setToken(accessToken);
         });
         }
-    },[email,uid]);
+    },[email,uid,name]);
     return [token];
 };
 
