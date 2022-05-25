@@ -2,6 +2,7 @@ import React from "react";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import SocialLogin from "../components/SocialLogin";
 import auth from "../firebase.init";
 import useToken from "../hooks/useToken";
 
@@ -141,6 +142,7 @@ const Register = () => {
             login
           </Link>
         </p>
+        <SocialLogin/>
       </div>
     </div>
   );
