@@ -23,7 +23,7 @@ const Dashboard = () => {
       </div>
       <div class="drawer-side">
         <label for="dashboard-drawer" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        <ul class="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           {!admin && (
             <>

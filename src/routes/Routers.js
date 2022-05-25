@@ -19,6 +19,8 @@ import Contact from "../pages/Contact";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import MyPortfolio from "../pages/MyPortfolio";
+import NotFound from "../pages/NotFound";
 import PaymentDetail from "../pages/PaymentDetail";
 import Purchease from "../pages/Purchase";
 import Register from "../pages/Register";
@@ -48,6 +50,8 @@ const Routers = () => {
           <Route path="myProfile" element={<MyProfile />} />
         </Route>
       </Route>
+      <Route path="/portfolio" element={<MyPortfolio/>}/>
+      <Route path="/*" element={<NotFound/>}/>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
