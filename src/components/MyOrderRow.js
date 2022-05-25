@@ -4,11 +4,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 
 const MyOrderRow = ({ order,setDeletingProduct }) => {
-  const {product, productQuantity, price, paid } = order;
-console.log('order',order);
+  const {_id,product, productQuantity, price, paid } = order;
+  
+
   return (
     <tr>
       <th>1</th>
@@ -18,7 +21,7 @@ console.log('order',order);
       <td>
         {price && !paid ? (
           <>
-            <button className="btn btn-xs btn-primary mr-3">pay</button>
+            <Link  to={`payment/${_id}`} className="btn btn-xs btn-primary mr-3">pay</Link>
           </>
         ) : (
             <FontAwesomeIcon className="text-primary text-xl" icon={faThumbsUp} />

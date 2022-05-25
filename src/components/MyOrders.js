@@ -6,7 +6,7 @@ import DeletingProductModal from "./DeletingProductModal";
 import MyOrderRow from "./MyOrderRow";
 
 const MyOrders = () => {
-  const [deletingProduct,setDeletingProduct] = useState(null)
+  const [deletingProduct, setDeletingProduct] = useState(null);
   const [user] = useAuthState(auth);
   const uid = user?.uid;
   const {
@@ -14,13 +14,13 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["orders", uid], () =>
-    fetch(`http://localhost:5000/orders/${uid}`,{
-      headers:{
-        authorization : `Berer ${localStorage.getItem('accessToken')}`
-      }
+    fetch(`http://localhost:5000/orders/${uid}`, {
+      headers: {
+        authorization: `Berer ${localStorage.getItem("accessToken")}`,
+      },
     }).then((res) => res.json())
   );
-  console.log('order',orders);
+  console.log("order", orders);
   return (
     <div class="overflow-x-auto">
       <table class="table w-full">
@@ -35,10 +35,22 @@ const MyOrders = () => {
           </tr>
         </thead>
         <tbody>
-          {orders?.map((order) => <MyOrderRow setDeletingProduct={setDeletingProduct} order={order} refetch={refetch}/> )}
+          {orders?.map((order) => (
+            <MyOrderRow
+              setDeletingProduct={setDeletingProduct}
+              order={order}
+              refetch={refetch}
+            />
+          ))}
         </tbody>
       </table>
-      { deletingProduct &&  <DeletingProductModal deletingProduct={deletingProduct} refetch={refetch} setDeletingProduct={setDeletingProduct}  />}
+      {deletingProduct && (
+        <DeletingProductModal
+          deletingProduct={deletingProduct}
+          refetch={refetch}
+          setDeletingProduct={setDeletingProduct}
+        />
+      )}
     </div>
   );
 };

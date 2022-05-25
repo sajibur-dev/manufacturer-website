@@ -19,6 +19,7 @@ import Contact from "../pages/Contact";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import PaymentDetail from "../pages/PaymentDetail";
 import Purchease from "../pages/Purchase";
 import Register from "../pages/Register";
 
@@ -39,13 +40,8 @@ const Routers = () => {
             index
             element={ <RequireUser><MyOrders /></RequireUser>}/>:<Route index element={<RequireAdmin> <AllOrders /></RequireAdmin>} />
           }
-         
-         
-          
-          
           <Route path="addReviews" element={<RequireUser><AddReviews /></RequireUser>} />
-
-
+          <Route path="payment/:id" element={<RequireUser><PaymentDetail/></RequireUser>}/>
           <Route path="addProduct" element={<RequireAdmin> <AddProduct /></RequireAdmin>} />
           <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin> } />
           <Route path="manageProducts" element={<RequireAdmin><ManageProducts /></RequireAdmin> } />
