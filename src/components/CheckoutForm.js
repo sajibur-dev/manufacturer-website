@@ -29,6 +29,8 @@ const CheckoutForm = (order) => {
         })
     },[price])
 
+    console.log(clientSecret);
+
     const  handlePayment = async (e) => {
         e.preventDefault();
 
