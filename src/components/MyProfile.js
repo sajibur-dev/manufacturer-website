@@ -23,6 +23,9 @@ const MyProfile = () => {
             </tr>
           </tbody>
         </table>
+        <form>
+          
+        </form>
       </div>
     </div>
   );
