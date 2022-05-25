@@ -19,7 +19,7 @@ const AddReviews = () => {
       rating: data?.rating,
     };
 
-    fetch('http://localhost:5000/reviews',{
+    fetch('https://nameless-chamber-79166.herokuapp.com/reviews',{
         method:'POST',
         headers:{
             'content-type':'application/json'

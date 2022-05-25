@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const MakeAdmin = () => {
   const { data: users, isLoading,refetch } = useQuery("users", () =>
-    fetch("http://localhost:5000/users", {
+    fetch("https://nameless-chamber-79166.herokuapp.com/users", {
       headers: {
         authorization: `Berer ${localStorage.getItem("accessToken")}`,
       },
@@ -12,7 +12,7 @@ const MakeAdmin = () => {
 
 
   const makeAdmin = (uid) => {
-      fetch(`http://localhost:5000/users/admin/${uid}`,{
+      fetch(`https://nameless-chamber-79166.herokuapp.com/users/admin/${uid}`,{
           method:'PUT',
         headers:{
             authorization : `Berer ${localStorage.getItem('accessToken')}`

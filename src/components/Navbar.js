@@ -98,7 +98,7 @@ const Navbar = () => {
         
           {user ? (
               <>
-              <p className="md:text-base text-xs">{user.displayName}</p>
+              <p className="md:text-base text-xs">{user?.displayName}</p>
             <button className="btn btn-ghost text-2xl ml-2" onClick={logout}><FontAwesomeIcon icon={faArrowRightFromBracket} /></button>
               </>
           ) : (

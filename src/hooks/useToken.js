@@ -13,7 +13,7 @@ const useToken = (user) => {
             name
         }
         if(uid || email){
-            fetch(`http://localhost:5000/users/${uid}`,{
+            fetch(`https://nameless-chamber-79166.herokuapp.com/users/${uid}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

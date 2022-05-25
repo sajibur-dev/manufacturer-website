@@ -10,7 +10,7 @@ const Purchease = () => {
   const [product,setProduct] = useState(null);
   const { id } = useParams();
   const { data, isLoading } = useQuery(["specificProduct", id], () =>
-    fetch(`http://localhost:5000/products/${id}`).then((res) => res.json())
+    fetch(`https://nameless-chamber-79166.herokuapp.com/products/${id}`).then((res) => res.json())
   );
   console.log(data);
   return <>

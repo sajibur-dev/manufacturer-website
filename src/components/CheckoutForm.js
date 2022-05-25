@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const CheckoutForm = (order) => {
     const stripe =  useStripe()
     const elements = useElements();
-    const {price,customer,customerEmail} = order;
+    const {_id,price,customer,customerEmail} = order;
     console.log('order pay',order);
 
     const [cardError,setCardError] = useState();
@@ -12,7 +12,7 @@ const CheckoutForm = (order) => {
 
     const [clientSecret,setClentSecret] = useState('');
     useEffect(()=>{
-        fetch('http://localhost:5000/create-payment-intent',{
+        fetch('https://nameless-chamber-79166.herokuapp.com/create-payment-intent',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
@@ -72,13 +72,14 @@ const CheckoutForm = (order) => {
         } else {
             setCardError('');
             console.log(paymentIntent);
+            setSuccess(paymentIntent.id)
             // update oreder paid and status : 
-            // fetch(`http://localhost:5000/orders/payment/${_id}`,{
-            //     method:'PUT'
-            // }).then((res)=>res.json())
-            // .then((result) => {
-            //     console.log(result);
-            // })
+            fetch(`https://nameless-chamber-79166.herokuapp.com/orders/payment/${_id}`,{
+                method:'PUT'
+            }).then((res)=>res.json())
+            .then((result) => {
+                console.log(result);
+            })
         }
     }
     return (
@@ -102,6 +103,12 @@ const CheckoutForm = (order) => {
                 />
                 <button type="submit" disabled={!stripe || !elements || !clientSecret} className="btn btn-primary btn-xs mt-5">pay</button>
             </form>
+            {
+                cardError && <p>{cardError?.message}</p>
+            }
+            {
+                success && <p>{success}</p>
+            }
         </div>
     );
 };

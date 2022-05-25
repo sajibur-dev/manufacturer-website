@@ -11,7 +11,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch("https://nameless-chamber-79166.herokuapp.com/products").then((res) => res.json())
   );
   return (
     <div className="lg:w-full">
