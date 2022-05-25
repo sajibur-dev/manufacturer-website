@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Route, Routes } from "react-router-dom";
 import AddProduct from "../components/AddProduct";
 import AddReviews from "../components/AddReviews";
@@ -10,6 +11,8 @@ import MakeAdmin from "../components/MakeAdmin";
 import ManageProducts from "../components/ManageProducts";
 import MyOrders from "../components/MyOrders";
 import MyProfile from "../components/MyProfile";
+import auth from "../firebase.init";
+import useAdmin from "../hooks/useAdmin";
 import About from "../pages/About";
 import Blogs from "../pages/Blogs";
 import Contact from "../pages/Contact";
@@ -20,6 +23,8 @@ import Purchease from "../pages/Purchase";
 import Register from "../pages/Register";
 
 const Routers = () => {
+  const [user] =  useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -29,12 +34,18 @@ const Routers = () => {
       <Route path="/" element={<RequireAuth />}>
         <Route path="purchease/:id" element={<Purchease />} />
         <Route path="dashboard" element={<Dashboard />}>
-          <Route
-            path="myOrders"
-            element={ <RequireUser> <MyOrders /></RequireUser>}/>
-          <Route path="addReviews" element={<RequireUser><AddReviews /></RequireUser>} />
+          {
+            !admin ?   <Route
+            index
+            element={ <RequireUser><MyOrders /></RequireUser>}/>:<Route index element={<RequireAdmin> <AllOrders /></RequireAdmin>} />
+          }
+         
+         
           
-          <Route path="allOrders" element={<RequireAdmin> <AllOrders /></RequireAdmin>} />
+          
+          <Route path="addReviews" element={<RequireUser><AddReviews /></RequireUser>} />
+
+
           <Route path="addProduct" element={<RequireAdmin> <AddProduct /></RequireAdmin>} />
           <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin> } />
           <Route path="manageProducts" element={<RequireAdmin><ManageProducts /></RequireAdmin> } />

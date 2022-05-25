@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token,setToken] = useState();
-    const uid = user.user?.uid;
-    const email = user.user?.email;
-    const name = user.user?.displayName;
+    const uid = user?.user?.uid;
+    const email = user?.user?.email;
+    const name = user?.user?.displayName;
 
     useEffect(()=>{
         const user = {

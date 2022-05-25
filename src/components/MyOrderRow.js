@@ -7,9 +7,8 @@ import React from "react";
 
 
 const MyOrderRow = ({ order,setDeletingProduct }) => {
-  const {product, productQuantity, price } = order;
-const paid = false
-console.log(order);
+  const {product, productQuantity, price, paid } = order;
+console.log('order',order);
   return (
     <tr>
       <th>1</th>
