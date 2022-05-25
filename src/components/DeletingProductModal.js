@@ -7,7 +7,10 @@ const DeletingProductModal = ({deletingProduct,setDeletingProduct,refetch}) => {
     const { _id,product} = deletingProduct;
     const removeProduct = (_id) => {
         fetch(`http://localhost:5000/orders/${_id}`,{
-            method:"DELETE"
+            method:"DELETE",
+            headers:{
+              authorization : `Berer ${localStorage.getItem('accessToken')}`
+            }
         })
         .then((res) => res.json())
         .then((data) => {
