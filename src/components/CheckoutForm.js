@@ -12,7 +12,7 @@ const CheckoutForm = (order) => {
 
     const [clientSecret,setClentSecret] = useState('');
     useEffect(()=>{
-        fetch('https://thawing-harbor-88814.herokuapp.com/create-payment-intent',{
+        fetch('https://frozen-coast-70492.herokuapp.com/create-payment-intent',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
@@ -76,7 +76,7 @@ const CheckoutForm = (order) => {
             console.log(paymentIntent);
             setSuccess(paymentIntent.id)
             // update oreder paid and status : 
-            fetch(`https://thawing-harbor-88814.herokuapp.com/orders/payment/${_id}`,{
+            fetch(`https://frozen-coast-70492.herokuapp.com/orders/payment/${_id}`,{
                 method:'PUT'
             }).then((res)=>res.json())
             .then((result) => {
