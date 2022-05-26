@@ -40,6 +40,37 @@ const Blogs = () => {
         <h1 className="text-3xl">How does prototypical inheritance work</h1>
         <p className="text-lg">prototypical inheritance refers to the ability to access object properties from another object. We use a JavaScript prototype to add new properties and methods to an existing object constructor. We can then essentially tell our JS code to inherit properties from a prototype. Prototypical inheritance allows us to reuse the properties or methods from one JavaScript object to another through a reference pointer function</p>
       </div>
+
+      <div className="w-full lg:w-4/5 mx-auto space-y-5 p-7 shadow-xl rounded-lg ">
+        <h1 className="text-3xl">You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
+        <div className="p-5">
+          <p>first we apply array filter method and check that every object in array name property value is equal to seach text,If codtion is true then return that object 
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full lg:w-4/5 mx-auto space-y-5 p-7 shadow-xl rounded-lg space-y-7">
+        <div className="space-y-3">
+          <h1 className="text-3xl">What is unit testing?</h1>
+          <p>Unit testing is a type of software testing where individual units or software components are tested. Its purpose is to validate that each unit of code performs as expected. A unit can be anything you want it to be — a line of code, a method, or a class.</p>
+        </div>
+
+        <div className="space-y-3">
+          <h1 className="text-3xl">Why should write unit tests?</h1>
+          <div className="space-y-3">
+            <h2 className="text-xl">Here are severel benefit of unit testing ? </h2>
+            <div className="space-y-3">
+              <p>Unit tests save time and money. Usually, we tend to test the happy path more than the unhappy path. If you release such an app without thorough testing, you would have to keep fixing issues raised by your potential users. The time to fix these issues could’ve been used to build new features or optimize the existing system. Bear in mind that fixing bugs without running tests could also introduce new bugs into the system.</p>
+
+              <p>Unit testing is an integral part of extreme programming. Extreme programming is basically a “test-everything-that-can-possibly-break” programming strategy.</p>
+
+              <p>Unit testing improves code coverage. A debatable topic is to have 100% code coverage across your application.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
     </div>
   );
 };
