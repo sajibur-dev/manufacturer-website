@@ -126,7 +126,7 @@ const Login = () => {
           New to toolkits ? <Link to="/register" className="text-blue-800">register</Link>
         </p>
         {
-            error && <p>{error?.message}</p>
+            error && <p className="text-error">{error?.message}</p>
         }
         <SocialLogin/>
       </div>

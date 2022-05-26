@@ -14,7 +14,7 @@ const CheckoutForm = (order) => {
     useEffect(()=>{
         if(price){
             // fetch('https://frozen-coast-70492.herokuapp.com/create-payment-intent',{
-                fetch('http://localhost:5000/create-payment-intent',{
+                fetch('https://frozen-coast-70492.herokuapp.com/create-payment-intent',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = (order) => {
             setSuccess(paymentIntent.id)
             // update oreder paid and status : 
             // fetch(`https://frozen-coast-70492.herokuapp.com/orders/payment/${_id}`,{
-                fetch(`http://localhost:5000/orders/payment/${_id}`,{
+                fetch(`https://frozen-coast-70492.herokuapp.com/orders/payment/${_id}`,{
                 method:'PUT'
             }).then((res)=>res.json())
             .then((result) => {
