@@ -28,7 +28,7 @@ const MyProfileForm = ({ setProfile }) => {
       area: data?.area,
     };
     console.log("profiels", profile);
-    fetch("http://localhost:5000/profiles", {
+    fetch("https://frozen-coast-70492.herokuapp.com/profiles", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const MyProfileForm = ({ setProfile }) => {
       .then((result) => {
         console.log(result);
         if (result.acknowledged) {
-          const url = `http://localhost:5000/profiles/${uid}`;
+          const url = `https://frozen-coast-70492.herokuapp.com/profiles/${uid}`;
           fetch(url)
             .then((res) => res.json())
             .then((data) => {

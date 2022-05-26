@@ -8,7 +8,7 @@ const MyProfileTable = () => {
   const navigate = useNavigate();
   const uid = user?.uid;
   const [profile, setProfile] = useState({});
-  const url = `http://localhost:5000/profiles/${uid}`;
+  const url = `https://frozen-coast-70492.herokuapp.com/profiles/${uid}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
