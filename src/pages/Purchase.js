@@ -10,7 +10,7 @@ const Purchease = () => {
   const [product,setProduct] = useState(null);
   const { id } = useParams();
   const { data, isLoading } = useQuery(["specificProduct", id], () =>
-    fetch(`https://thawing-harbor-88814.herokuapp.com/products/${id}`).then((res) => res.json())
+    fetch(`https://frozen-coast-70492.herokuapp.com/products/${id}`).then((res) => res.json())
   );
   console.log(data);
   return <>

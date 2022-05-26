@@ -8,7 +8,7 @@ import CheckoutForm from '../components/CheckoutForm';
 
 const PaymentDetail = () => {
     const {id} =  useParams();
-    const {data:order,isLoading} =  useQuery(['paymentOrder',id],()=>fetch(`https://thawing-harbor-88814.herokuapp.com/orders/payment/${id}`,{
+    const {data:order,isLoading} =  useQuery(['paymentOrder',id],()=>fetch(`https://frozen-coast-70492.herokuapp.com/orders/payment/${id}`,{
         headers:{
             authorization: `Berer ${localStorage.getItem("accessToken")}`,
         }

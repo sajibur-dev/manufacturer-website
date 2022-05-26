@@ -34,7 +34,7 @@ const AddProduct = () => {
             };
             console.log(products);
 
-            fetch('https://thawing-harbor-88814.herokuapp.com/products',{
+            fetch('https://frozen-coast-70492.herokuapp.com/products',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json',

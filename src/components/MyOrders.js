@@ -14,7 +14,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["orders", uid], () =>
-    fetch(`https://thawing-harbor-88814.herokuapp.com/orders/${uid}`, {
+    fetch(`https://frozen-coast-70492.herokuapp.com/orders/${uid}`, {
       headers: {
         authorization: `Berer ${localStorage.getItem("accessToken")}`,
       },

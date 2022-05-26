@@ -6,7 +6,7 @@ const useAdmin = (user) => {
     useEffect( () =>{
         const uid = user?.uid;
         if(uid){
-            fetch(`https://thawing-harbor-88814.herokuapp.com/admin/${uid}`, {
+            fetch(`https://frozen-coast-70492.herokuapp.com/admin/${uid}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',

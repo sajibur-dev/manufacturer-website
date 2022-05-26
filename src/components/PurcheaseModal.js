@@ -56,7 +56,7 @@ const handlePlaceOrder = (e) => {
     const productQuantityNumber = +productQuantity;
     if(productQuantityNumber >= minimumOrderQuantity && productQuantityNumber <= availableQuantity){
         
-        fetch('https://thawing-harbor-88814.herokuapp.com/orders',{
+        fetch('https://frozen-coast-70492.herokuapp.com/orders',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

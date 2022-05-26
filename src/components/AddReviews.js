@@ -19,7 +19,7 @@ const AddReviews = () => {
       rating: data?.rating,
     };
 
-    fetch('https://thawing-harbor-88814.herokuapp.com/reviews',{
+    fetch('https://frozen-coast-70492.herokuapp.com/reviews',{
         method:'POST',
         headers:{
             'content-type':'application/json'
