@@ -12,21 +12,24 @@ const CheckoutForm = (order) => {
 
     const [clientSecret,setClentSecret] = useState('');
     useEffect(()=>{
-        fetch('https://frozen-coast-70492.herokuapp.com/create-payment-intent',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json',
-                authorization: `Berer ${localStorage.getItem("accessToken")}`,
-            },
-            body:JSON.stringify({price})
-        }).then((res) => res.json())
-        .then((result) => {
-            console.log(result.clientSecret);
-            const secretClient = result.clientSecret
-            if(secretClient){
-                setClentSecret(secretClient)
-            }
-        })
+        if(price){
+            fetch('https://frozen-coast-70492.herokuapp.com/create-payment-intent',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json',
+                    authorization: `Berer ${localStorage.getItem("accessToken")}`,
+                },
+                body:JSON.stringify({price})
+            }).then((res) => res.json())
+            .then((result) => {
+                console.log(result.clientSecret);
+                const secretClient = result.clientSecret
+                if(secretClient){
+                    setClentSecret(secretClient)
+                }
+            })
+        }
+       
     },[price])
 
     console.log('clinet',clientSecret);
