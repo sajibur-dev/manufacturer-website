@@ -29,7 +29,7 @@ const CheckoutForm = (order) => {
         })
     },[price])
 
-    console.log(clientSecret);
+    console.log('clinet',clientSecret);
 
     const  handlePayment = async (e) => {
         e.preventDefault();
