@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../firebase.init";
 
 const MyProfileForm = ({ setProfile }) => {
@@ -44,7 +45,10 @@ const MyProfileForm = ({ setProfile }) => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              setProfile(data);
+              if(data.acknowledged){
+                toast.success('data save sucess fully.see profile table')
+                setProfile(data);
+              }
             });
         }
       });
