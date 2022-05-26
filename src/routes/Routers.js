@@ -11,6 +11,7 @@ import MakeAdmin from "../components/MakeAdmin";
 import ManageProducts from "../components/ManageProducts";
 import MyOrders from "../components/MyOrders";
 import MyProfile from "../components/MyProfile";
+import UpdateProfile from "../components/UpdateProfile";
 import auth from "../firebase.init";
 import useAdmin from "../hooks/useAdmin";
 import About from "../pages/About";
@@ -44,6 +45,7 @@ const Routers = () => {
           }
           <Route path="addReviews" element={<RequireUser><AddReviews /></RequireUser>} />
           <Route path="payment/:id" element={<RequireUser><PaymentDetail/></RequireUser>}/>
+          <Route path="myProfile/updateProfile/:profileId" element={<UpdateProfile/>}/>
           <Route path="addProduct" element={<RequireAdmin> <AddProduct /></RequireAdmin>} />
           <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin> } />
           <Route path="manageProducts" element={<RequireAdmin><ManageProducts /></RequireAdmin> } />
