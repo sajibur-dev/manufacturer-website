@@ -13,7 +13,7 @@ const useToken = (user) => {
             name
         }
         if(uid || email){
-            fetch(`https://nameless-chamber-79166.herokuapp.com/users/${uid}`,{
+            fetch(`https://thawing-harbor-88814.herokuapp.com/users/${uid}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

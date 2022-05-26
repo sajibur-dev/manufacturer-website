@@ -19,7 +19,7 @@ const AddReviews = () => {
       rating: data?.rating,
     };
 
-    fetch('https://nameless-chamber-79166.herokuapp.com/reviews',{
+    fetch('https://thawing-harbor-88814.herokuapp.com/reviews',{
         method:'POST',
         headers:{
             'content-type':'application/json'

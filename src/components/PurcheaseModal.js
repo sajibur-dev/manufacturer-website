@@ -56,7 +56,7 @@ const handlePlaceOrder = (e) => {
     const productQuantityNumber = +productQuantity;
     if(productQuantityNumber >= minimumOrderQuantity && productQuantityNumber <= availableQuantity){
         
-        fetch('https://nameless-chamber-79166.herokuapp.com/orders',{
+        fetch('https://thawing-harbor-88814.herokuapp.com/orders',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

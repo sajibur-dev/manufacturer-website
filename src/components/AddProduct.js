@@ -34,7 +34,7 @@ const AddProduct = () => {
             };
             console.log(products);
 
-            fetch('https://nameless-chamber-79166.herokuapp.com/products',{
+            fetch('https://thawing-harbor-88814.herokuapp.com/products',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json',
