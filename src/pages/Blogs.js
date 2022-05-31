@@ -4,7 +4,7 @@ const Blogs = () => {
   return (
     <div className="space-y-28">
       <div className="w-full lg:w-4/5 mx-auto space-y-5 p-7 shadow-xl rounded-lg ">
-        <h1 className="text-3xl">How will you improve the performance of a React Application?</h1>
+        <h1 className="text-3xl">How will you improve the performance of a React Applications?</h1>
         <div className="p-5 space-y-5">
           <h2 className="text-2xl">Here 3 ways to improve performance of react app?</h2>
           <ul className="space-y-5 text-lg">
